@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">HaVagas</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="email">E-mail</string>
+    <string name="feminino">Feminino</string>
+    <string name="masculino">Masculino</string>
+    <string name="receber_email">Desejo receber atualização de oportunidades por e-mail</string>
+    <string name="ano_de_formatura">Ano de formatura</string>
+
+    <string-array name="formacao">
+        <item>Formação</item>
+        <item>Fundamental</item>
+        <item>Médio</item>
+        <item>Graduação</item>
+        <item>Especialização</item>
+        <item>Mestrado</item>
+        <item>Doutorado</item>
+    </string-array>
+</resources>
