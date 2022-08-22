@@ -1,11 +1,24 @@
 <resources>
-    <string name="app_name">HaVagas</string>
+    <string name="app_name">HáVagas</string>
     <string name="nome_completo">Nome Completo</string>
     <string name="email">E-mail</string>
     <string name="feminino">Feminino</string>
     <string name="masculino">Masculino</string>
     <string name="receber_email">Desejo receber atualização de oportunidades por e-mail</string>
     <string name="ano_de_formatura">Ano de formatura</string>
+    <string name="ano_de_conclusao">Ano de conclusão</string>
+    <string name="formulario_de_cadastro">Formulário de cadastro</string>
+    <string name="instituicao">Instituição</string>
+    <string name="orientador">Orientador</string>
+    <string name="titulo_da_monografia">Título da monografia</string>
+    <string name="telefone">Telefone</string>
+    <string name="cadastrar_telefone_celular">Deseja cadastrar telefone celular?</string>
+    <string name="celular">Celular</string>
+    <string name="limpar">Limpar</string>
+    <string name="salvar">Salvar</string>
+    <string name="data_de_nascimento">Data de nascimento</string>
+    <string name="vagas_de_interesse">Vagas de interesse</string>
+
 
     <string-array name="formacao">
         <item>Formação</item>
