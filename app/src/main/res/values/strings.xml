@@ -18,6 +18,7 @@
     <string name="salvar">Salvar</string>
     <string name="data_de_nascimento">Data de nascimento</string>
     <string name="vagas_de_interesse">Vagas de interesse</string>
+    <string name="vagas_de_interesse_tv">Vagas de interesse</string>
 
 
     <string-array name="formacao">

@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
@@ -55,7 +55,7 @@
             android:minHeight="48dp" />
 
         <Switch
-            android:id="@+id/receberAtualizacaoSw"
+            android:id="@+id/cadastrar_celular_sw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cadastrar_telefone_celular"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/celular"
             android:minHeight="48dp"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -98,8 +98,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/data_de_nascimento"
-            android:minHeight="48dp"
-            android:inputType="date" />
+            android:minHeight="48dp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
 
         <Spinner
             android:id="@+id/formacaoSp"
@@ -109,83 +114,49 @@
             android:layout_margin="5dp"
             android:entries="@array/formacao" />
 
-        <LinearLayout
-            android:id="@+id/fundamentalMedioLl"
+
+        <EditText
+            android:id="@+id/anoConclusaoEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:visibility="gone"
+            android:hint="@string/ano_de_conclusao" />
+
+        <EditText
+            android:id="@+id/instituicaoEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            android:orientation="vertical" >
+            android:hint="@string/instituicao" />
 
-            <EditText
-                android:id="@+id/anoFormaturaEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="@string/ano_de_formatura" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/graduacaoEspecializacaoLl"
+        <EditText
+            android:id="@+id/tituloMonografiaEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            android:orientation="vertical" >
+            android:hint="@string/titulo_da_monografia" />
 
-            <EditText
-                android:id="@+id/anoConclusaoGEEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="@string/ano_de_conclusao" />
-
-            <EditText
-                android:id="@+id/InstituicaoGEEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/instituicao" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/mestradoDoutoradoLl"
+        <EditText
+            android:id="@+id/orientadorEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            android:orientation="vertical" >
+            android:hint="@string/orientador" />
 
-            <EditText
-                android:id="@+id/anoConclusaoMDEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="@string/ano_de_conclusao" />
 
-            <EditText
-                android:id="@+id/instituicaoMDEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/instituicao" />
-
-            <EditText
-                android:id="@+id/tituloMonografiaEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/titulo_da_monografia" />
-
-            <EditText
-                android:id="@+id/orientadorEt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/orientador" />
-
-        </LinearLayout>
-
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
 
         <EditText
             android:id="@+id/vagasDeInteresseEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:layout_marginTop="10dp"
             android:hint="@string/vagas_de_interesse"
             android:inputType="textMultiLine" />
 
