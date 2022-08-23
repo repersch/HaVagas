@@ -46,6 +46,37 @@
             android:minHeight="48dp"
             android:text="@string/receber_email"/>
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginStart="5dp"
+            android:text="@string/tipo_de_telefoneTv"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="5dp"
+            android:minHeight="48dp">
+
+            <RadioButton
+                android:id="@+id/residencialRb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/residencialRb" />
+
+            <RadioButton
+                android:id="@+id/comercialRb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/comercialRb"/>
+        </RadioGroup>
+
         <EditText
             android:id="@+id/telefoneEt"
             android:layout_width="match_parent"
@@ -72,7 +103,7 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
             android:minHeight="48dp"
             android:orientation="horizontal"
             android:padding="5dp">

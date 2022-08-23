@@ -19,6 +19,9 @@
     <string name="data_de_nascimento">Data de nascimento</string>
     <string name="vagas_de_interesse">Vagas de interesse</string>
     <string name="vagas_de_interesse_tv">Vagas de interesse</string>
+    <string name="tipo_de_telefoneTv">Tipo de telefone:</string>
+    <string name="comercialRb">Comercial</string>
+    <string name="residencialRb">Residencial</string>
 
 
     <string-array name="formacao">

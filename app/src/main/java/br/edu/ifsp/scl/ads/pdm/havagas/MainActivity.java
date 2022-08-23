@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import java.time.LocalDate;
 
@@ -75,11 +77,16 @@ public class MainActivity extends AppCompatActivity {
         amb.nomeEt.setText("");
         amb.emailEt.setText("");
         amb.receberEmailCb.setChecked(false);
+        amb.residencialRb.setChecked(true);
         amb.telefoneEt.setText("");
         amb.celularEt.setText("");
         amb.femininoRb.setChecked(true);
         amb.dataNascimentoEt.setText("");
         amb.formacaoSp.setSelection(0);
+        amb.instituicaoEt.setText("");
+        amb.anoConclusaoEt.setText("");
+        amb.orientadorEt.setText("");
+        amb.tituloMonografiaEt.setText("");
         amb.vagasDeInteresseEt.setText("");
         amb.cadastrarCelularSw.setChecked(false);
         amb.celularEt.setVisibility(View.GONE);
@@ -90,12 +97,9 @@ public class MainActivity extends AppCompatActivity {
         cadastro.setNome(amb.nomeEt.getText().toString());
         cadastro.setEmail(amb.emailEt.getText().toString());
         cadastro.setReceberEmail(amb.receberEmailCb.isChecked());
+        cadastro.setTipoTelefone(amb.residencialRb.isChecked() ? "Residencial" : "Comercial");
         cadastro.setTelefone(amb.telefoneEt.getText().toString());
-        if (amb.cadastrarCelularSw.isChecked()) {
-            cadastro.setCelular(amb.celularEt.getText().toString());
-        } else {
-            cadastro.setCelular(null);
-        }
+        cadastro.setCelular(amb.cadastrarCelularSw.isChecked() ? amb.celularEt.getText().toString() : null);
         cadastro.setSexo(amb.femininoRb.isChecked() ? "Feminino" : "Masculino");
         cadastro.setDataNascimento(amb.dataNascimentoEt.getText().toString());
         cadastro.setFormacao(amb.formacaoSp.getSelectedItem().toString());
@@ -111,7 +115,11 @@ public class MainActivity extends AppCompatActivity {
         }
         cadastro.setVagasDeInteresse(amb.vagasDeInteresseEt.getText().toString());
 
-        System.out.println(cadastro);
+        Toast toast = Toast.makeText(getApplicationContext(), cadastro.toString(), Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0);
         limpar(view);
+        toast.show();
+
+        System.out.println(cadastro);
     }
 }

@@ -1,7 +1,5 @@
 package br.edu.ifsp.scl.ads.pdm.havagas;
 
-import java.time.LocalDate;
-
 public class Cadastro {
 
     private String nome;
@@ -153,21 +151,37 @@ public class Cadastro {
 
     @Override
     public String toString() {
-        return "Cadastro{" +
-                "nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", receberEmail=" + receberEmail +
-                ", telefone='" + telefone + '\'' +
-                ", tipoTelefone='" + tipoTelefone + '\'' +
-                ", celular='" + celular + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", dataNascimento=" + dataNascimento +
-                ", formacao='" + formacao + '\'' +
-                ", anoConclusao=" + anoConclusao +
-                ", instituicao='" + instituicao + '\'' +
-                ", tituloMonografia='" + tituloMonografia + '\'' +
-                ", orientador='" + orientador + '\'' +
-                ", vagasDeInteresse='" + vagasDeInteresse + '\'' +
-                '}';
+
+        StringBuilder cadastro = new StringBuilder();
+        cadastro.append( "Nome: " + nome +
+                "\nE-mail:" + email +
+                "\nReceber e-mail: " + receberEmail +
+                "\nTipo de telefone: " + tipoTelefone +
+                "\nTelefone: " + telefone);
+
+        if (celular != null) {
+            cadastro.append("\nCelular: " + celular);
+        }
+
+        cadastro.append("\nSexo: " + sexo +
+                "\nData de nascimento: " + dataNascimento +
+                "\nFormacao: " + formacao +
+                "\nAno de Conclusão: " + anoConclusao);
+
+        if (instituicao != null) {
+            cadastro.append("\nInstituição: " + instituicao);
+        }
+
+        if (tituloMonografia != null) {
+            cadastro.append("\nTítulo da Monografia: " + tituloMonografia);
+        }
+
+        if (orientador != null) {
+            cadastro.append( "\nOrientador: " + orientador);
+        }
+
+        cadastro.append("\nVagas de interesse: " + vagasDeInteresse);
+
+        return cadastro.toString();
     }
 }
