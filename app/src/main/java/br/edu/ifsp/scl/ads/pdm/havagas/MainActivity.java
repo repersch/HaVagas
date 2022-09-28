@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.ads.pdm.havagas;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,19 +19,28 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding amb;
     private Cadastro cadastro;
+    private String NOME;
+    private String EMAIL;
+    private String TELEFONE;
+    private String CELULAR;
+    private String DATA_NASCIMENTO;
+    private String FORMACAO;
+    private String ANO_CONCLUSAO;
+    private String INTITUICAO;
+    private String TITULO_MONOGRAFIA;
+    private String ORIENTADOR;
+    private String VAGAS_DE_INTERESSE;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         amb = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(amb.getRoot());
 
         amb.limparBt.setOnClickListener(this::limpar);
 
         amb.salvarBt.setOnClickListener(this::salvar);
-
         amb.cadastrarCelularSw.setOnClickListener(view -> {
             if (amb.cadastrarCelularSw.isChecked()) {
                 amb.celularEt.setVisibility(View.VISIBLE);
@@ -38,6 +48,21 @@ public class MainActivity extends AppCompatActivity {
                 amb.celularEt.setVisibility(View.GONE);
             }
         });
+
+
+        if (savedInstanceState != null) {
+            amb.nomeEt.setText(savedInstanceState.getString(NOME));
+            amb.emailEt.setText(savedInstanceState.getString(EMAIL));
+            amb.telefoneEt.setText(savedInstanceState.getString(TELEFONE));
+            amb.celularEt.setText(savedInstanceState.getString(CELULAR));
+            amb.dataNascimentoEt.setText(savedInstanceState.getString(DATA_NASCIMENTO));
+            amb.anoConclusaoEt.setText(savedInstanceState.getString(ANO_CONCLUSAO));
+            amb.instituicaoEt.setText(savedInstanceState.getString(INTITUICAO));
+            amb.tituloMonografiaEt.setText(savedInstanceState.getString(TITULO_MONOGRAFIA));
+            amb.orientadorEt.setText(savedInstanceState.getString(ORIENTADOR));
+            amb.vagasDeInteresseEt.setText(savedInstanceState.getString(VAGAS_DE_INTERESSE));
+
+        }
 
         amb.formacaoSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -71,6 +96,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(NOME, amb.nomeEt.getText().toString());
+        outState.putString(EMAIL, amb.emailEt.getText().toString());
+        outState.putString(TELEFONE, amb.telefoneEt.getText().toString());
+        outState.putString(CELULAR, amb.celularEt.getText().toString());
+        outState.putString(DATA_NASCIMENTO, amb.dataNascimentoEt.getText().toString());
+        outState.putString(FORMACAO, amb.dataNascimentoEt.getText().toString());
+        //outState.putInt(ANO_CONCLUSAO, Integer.parseInt(amb.anoConclusaoEt.getText().toString()));
+        outState.putString(INTITUICAO, amb.instituicaoEt.getText().toString());
+        outState.putString(TITULO_MONOGRAFIA, amb.tituloMonografiaEt.getText().toString());
+        outState.putString(ORIENTADOR, amb.orientadorEt.getText().toString());
+        outState.putString(VAGAS_DE_INTERESSE, amb.vagasDeInteresseEt.getText().toString());
     }
 
     private void limpar(View view) {
